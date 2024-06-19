@@ -1,6 +1,6 @@
 {
   "cesVersion": "2.10.5",
-  "projectName": "e-scooter",
+  "projectName": "react-native-e-scooter",
   "packages": [
     {
       "name": "expo-router",
