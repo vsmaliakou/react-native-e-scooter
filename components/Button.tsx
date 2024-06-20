@@ -8,7 +8,14 @@ type ButtonProps = {
 export const Button = forwardRef<TouchableOpacity, ButtonProps>(
   ({ title, ...touchableProps }, ref) => {
     return (
-      <TouchableOpacity ref={ref} {...touchableProps} style={[styles.button, touchableProps.style]}>
+      <TouchableOpacity
+        ref={ref}
+        {...touchableProps}
+        style={[
+          styles.button,
+          touchableProps.style,
+          { backgroundColor: touchableProps.disabled ? 'gray' : '#38C400' },
+        ]}>
         <Text style={styles.buttonText}>{title}</Text>
       </TouchableOpacity>
     );
@@ -18,8 +25,8 @@ export const Button = forwardRef<TouchableOpacity, ButtonProps>(
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
-    backgroundColor: '#6366F1',
-    borderRadius: 24,
+    backgroundColor: '#38C400',
+    borderRadius: 10,
     elevation: 5,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -34,8 +41,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: '600',
+    fontSize: 18,
+    fontWeight: '700',
     textAlign: 'center',
   },
 });
